@@ -150,13 +150,15 @@ public getAllMovies(): Observable<Movie[]> {
 
   //  Error handler
   private handleError(error: HttpErrorResponse): Observable<never> {
-    if (error.error instanceof ErrorEvent) {
-      console.error('Some error occurred:', error.error.message);
-    } else {
-      console.error(
-        `Error Status code ${error.status}, Error body is: ${error.error}`
-      );
-    }
-    return throwError(() => new Error('Something bad happened; please try again later.'));
+  let errorMessage = 'Something bad happened; please try again later.';
+
+  if (error.error && typeof error.error === 'object' && error.error.message) {
+    errorMessage = error.error.message;
+  } else if (typeof error.error === 'string') {
+    errorMessage = error.error;
   }
+
+  console.error('API Error:', errorMessage);
+  return throwError(() => new Error(errorMessage));
+}
 }
