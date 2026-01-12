@@ -100,7 +100,7 @@ export class MovieCard {
 
         localStorage.setItem('user', JSON.stringify(updatedUser));
 
-        // ✅ Immutable update
+        // Immutable update
         this.favoriteIdsSubject.next([...currentIds, movieId]);
       },
       error: (err) =>

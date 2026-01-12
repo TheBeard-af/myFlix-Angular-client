@@ -66,7 +66,7 @@ editUserData = {
       localStorage.setItem('user', JSON.stringify(user));
       this.userSubject.next(user);
 
-      // ✅ populate edit form defaults
+      //  populate edit form defaults
       this.editUserData = {
   Username: user.Username,
   Email: user.Email,
@@ -103,11 +103,11 @@ saveProfile(): void {
 
   this.fetchApiData.editUser(currentUsername, updatedData).subscribe({
     next: (updatedUser) => {
-      // ✅ Update localStorage and reactive stream
+      //  Update localStorage and reactive stream
       localStorage.setItem('user', JSON.stringify(updatedUser));
       this.userSubject.next(updatedUser);
 
-      // ✅ Exit edit mode
+      //  Exit edit mode
       this.isEditing = false;
 
       this.snackBar.open('Profile updated successfully', 'OK', {
