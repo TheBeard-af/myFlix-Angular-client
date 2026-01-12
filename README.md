@@ -1,59 +1,125 @@
-# MyFlixAngularClient
+# 🎬 myFlix Angular Client
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.5.
+The **myFlix Angular Client** is a single-page application (SPA) built with **Angular** and **Angular Material** that allows users to explore a curated movie database. Users can register, log in, view movies, manage their favorites, and edit their user profile. This project was developed as part of the **CareerFoundry Full-Stack Immersion Program**.
 
-## Development server
+---
 
-To start a local development server, run:
+## 🚀 Live Demo
 
-```bash
-ng serve
-```
+🔗 **Live App:**  
+https://thebeard-af.github.io/myFlix-Angular-client/
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+🔗 **GitHub Repository:**  
+https://github.com/TheBeard-af/myFlix-Angular-client
 
-## Code scaffolding
+---
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## 📌 Project Overview
 
-```bash
-ng generate component component-name
-```
+### Purpose
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+The goal of this project was to build a **modern Angular frontend** that consumes an existing RESTful API. The application demonstrates best practices in Angular development, including routing, services, reactive state management, and Material UI design.
 
-```bash
-ng generate --help
-```
+### Features
 
-## Building
+- User registration and login
+- JWT-based authentication
+- Browse a list of movies
+- View movie details via dialogs:
+  - Genre
+  - Director
+  - Synopsis
+- Add and remove movies from favorites
+- Visual indicator for favorite movies
+- User profile page:
+  - View profile details
+  - Edit username, email, and birthday
+  - View and manage favorite movies
+- Responsive UI using Angular Material
+- Hosted on GitHub Pages
 
-To build the project run:
+---
 
-```bash
-ng build
-```
+## 🛠️ Technologies Used
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+### Frontend
 
-## Running unit tests
+- **Angular 21**
+- **TypeScript**
+- **Angular Material**
+- **RxJS**
+- **HTML5 / SCSS**
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+### Tooling & Platform
 
-```bash
-ng test
-```
+- Angular CLI
+- GitHub & GitHub Pages
+- GitHub Desktop
+- RESTful API (Node.js / Express backend)
 
-## Running end-to-end tests
+---
 
-For end-to-end (e2e) testing, run:
+## 🧩 Main Building Blocks of Angular
 
-```bash
-ng e2e
-```
+Angular applications are built using the following core building blocks:
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+- **Components** – Define views and UI logic
+- **Templates** – HTML with Angular directives and bindings
+- **Services** – Handle data fetching and business logic
+- **Dependency Injection (DI)** – Manages shared resources across components
+- **Routing** – Enables navigation between views
+- **Directives & Pipes** – Extend HTML behavior and transform data
+- **RxJS Observables** – Handle asynchronous data streams
 
-## Additional Resources
+---
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## ✅ Advantages & Disadvantages of Angular
+
+### Advantages
+
+- Full-featured framework (routing, forms, HTTP, state handling)
+- Strong typing with TypeScript
+- Clear architecture and separation of concerns
+- Powerful tooling and CLI
+- Excellent support for large-scale applications
+- Built-in support for reactive programming (RxJS)
+
+### Disadvantages
+
+- Steeper learning curve compared to simpler frameworks
+- Verbose syntax in some cases
+- RxJS concepts can be challenging initially
+- Heavier bundle size compared to lightweight libraries
+
+---
+
+## 🎨 What is Angular Material?
+
+**Angular Material** is a UI component library built specifically for Angular that implements Google’s Material Design.
+
+With Angular Material, you can:
+
+- Build responsive, accessible UIs quickly
+- Use pre-built components like:
+  - Toolbars
+  - Cards
+  - Buttons
+  - Dialogs
+  - Forms
+  - Icons
+- Maintain consistent design across the application
+- Improve accessibility out of the box
+
+In this project, Angular Material was used for dialogs, navigation, forms, buttons, icons, and layout.
+
+---
+
+## 👤 User Stories
+
+- As a user, I want to register and log in securely.
+- As a user, I want to browse a list of movies.
+- As a user, I want to view details about a movie.
+- As a user, I want to add and remove movies from my favorites.
+- As a user, I want to view and edit my profile information.
+
+---
