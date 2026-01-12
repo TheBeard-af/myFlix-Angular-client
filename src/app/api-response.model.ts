@@ -1,19 +1,19 @@
 // Movie interface
 export interface Movie {
   _id: string;
-  Title: string;
-  Description: string;
-  Genre: {
-    Name: string;
-    Description: string;
+  title: string;
+  description: string;
+  genre: {
+    name: string;
+    description: string;
   };
-  Director: {
-    Name: string;
-    Bio: string;
-    Birth: string;
+  director: {
+    name: string;
+    bio: string;
+    birthdate: string;
   };
-  ImagePath: string;
-  Featured: boolean;
+  imageUrl: string;
+  featured: boolean;
 }
 
 // User interface

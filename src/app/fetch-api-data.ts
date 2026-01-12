@@ -53,9 +53,9 @@ public getAllMovies(): Observable<Movie[]> {
   }
 
     //  Get director by name
-  public getDirector(name: string): Observable<Movie['Director']> {
+  public getDirector(name: string): Observable<Movie['director']> {
     const token = localStorage.getItem('token') ?? '';
-    return this.http.get<Movie['Director']>(apiUrl + 'directors/' + name, {
+    return this.http.get<Movie['director']>(apiUrl + 'directors/' + name, {
       headers: new HttpHeaders({
         Authorization: 'Bearer ' + token,
       })
@@ -65,9 +65,9 @@ public getAllMovies(): Observable<Movie[]> {
   }
 
     //  Get genre by name
-  public getGenre(name: string): Observable<Movie['Genre']> {
+  public getGenre(name: string): Observable<Movie['genre']> {
     const token = localStorage.getItem('token') ?? '';
-    return this.http.get<Movie['Genre']>(apiUrl + 'genres/' + name, {
+    return this.http.get<Movie['genre']>(apiUrl + 'genres/' + name, {
       headers: new HttpHeaders({
         Authorization: 'Bearer ' + token,
       })

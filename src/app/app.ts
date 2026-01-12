@@ -1,35 +1,31 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { MatDialog, MatDialogModule } from '@angular/material/dialog';
-import { UserRegistrationForm } from './user-registration-form/user-registration-form';
-import { UserLoginForm } from './user-login-form/user-login-form';
+import { Component } from '@angular/core';
+import { RouterOutlet, Router, RouterLink  } from '@angular/router';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { CommonModule } from '@angular/common';
 
 @Component({
-  
   selector: 'app-root',
+  standalone: true,
   imports: [
+    CommonModule,
     RouterOutlet,
-    MatDialogModule
+    RouterLink,
+    MatToolbarModule,
+    MatButtonModule,
   ],
   templateUrl: './app.html',
-  styleUrl: './app.scss'
-  
+  styleUrls: ['./app.scss'],
 })
-
 export class App {
-  protected readonly title = signal('myFlix-Angular-client');
+  constructor(private router: Router) {}
 
-  constructor(public dialog: MatDialog) {}
+  isLoggedIn(): boolean {
+    return !!localStorage.getItem('token');
+  }
 
-  openUserRegistrationDialog(): void {
-  this.dialog.open(UserRegistrationForm, {
-    width: '280px'
-  });
-}
-
-  openUserLoginDialog(): void {
-  this.dialog.open(UserLoginForm, {
-    width: '280px'
-  });
-}
+  logout(): void {
+    localStorage.clear();
+    this.router.navigate(['welcome']);
+  }
 }

@@ -1,0 +1,60 @@
+<div *ngIf="user$ | async as user" class="profile-container">
+  <h2>User Profile</h2>
+
+  <!-- VIEW MODE -->
+  <div *ngIf="!isEditing">
+    <p><strong>Username:</strong> {{ user.Username }}</p>
+    <p><strong>Email:</strong> {{ user.Email }}</p>
+    <p><strong>Birthday:</strong> {{ user.Birthday | date }}</p>
+
+    <button mat-raised-button color="primary" (click)="startEdit()">Edit Profile</button>
+  </div>
+
+  <!-- EDIT MODE -->
+  <div *ngIf="isEditing">
+    <form>
+      <mat-form-field appearance="fill" style="width: 100%">
+        <mat-label>Username</mat-label>
+        <input matInput [(ngModel)]="editUserData.Username" name="Username" />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" style="width: 100%">
+        <mat-label>Email</mat-label>
+        <input matInput type="email" [(ngModel)]="editUserData.Email" name="Email" />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" style="width: 100%">
+        <mat-label>Birthday</mat-label>
+        <input matInput type="date" [(ngModel)]="editUserData.Birthday" name="Birthday" />
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" type="button" (click)="saveProfile()">Save</button>
+
+      <button mat-button type="button" (click)="cancelEdit()">Cancel</button>
+    </form>
+  </div>
+
+  <hr />
+
+  <!-- FAVORITES (unchanged) -->
+  <h3>Favorite Movies</h3>
+
+  <div *ngIf="favoriteMovies$ | async as favorites">
+    <div *ngIf="favorites.length > 0; else noFavorites">
+      <div class="favorites-container">
+        <div *ngFor="let movie of favorites" class="favorite-movie">
+          <img [src]="movie.imageUrl" [alt]="movie.title" width="100" />
+          <p>{{ movie.title }}</p>
+
+          <button mat-button color="warn" (click)="removeFromFavorites(user, movie._id)">
+            Remove
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #noFavorites>
+    <p>No favorite movies yet.</p>
+  </ng-template>
+</div>

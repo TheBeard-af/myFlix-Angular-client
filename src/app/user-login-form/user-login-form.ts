@@ -10,6 +10,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 
 import { FetchApiDataService } from '../fetch-api-data';
 
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-user-login-form',
   standalone: true,
@@ -34,7 +36,8 @@ export class UserLoginForm {
   constructor(
     public fetchApiData: FetchApiDataService,
     public dialogRef: MatDialogRef<UserLoginForm>,
-    public snackBar: MatSnackBar
+    public snackBar: MatSnackBar,
+    private router: Router
   ) {}
 
   loginUser(): void {
@@ -47,6 +50,8 @@ export class UserLoginForm {
         this.snackBar.open('Login successful', 'OK', {
           duration: 2000
         });
+
+        this.router.navigate(['movies']);
       },
       error: (error: any) => {
         this.snackBar.open(
