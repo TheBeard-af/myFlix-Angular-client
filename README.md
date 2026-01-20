@@ -2,6 +2,13 @@
 
 The **myFlix Angular Client** is a single-page application (SPA) built with **Angular** and **Angular Material** that allows users to explore a curated movie database. Users can register, log in, view movies, manage their favorites, and edit their user profile. This project was developed as part of the **CareerFoundry Full-Stack Immersion Program**.
 
+## 📄 Documentation
+
+This project includes generated technical documentation using **TypeDoc**.
+
+You can view the documentation by opening:
+docs/index.html in the repository, or by cloning the project and opening the file locally in a browser.
+
 ---
 
 ## 🚀 Live Demo
@@ -121,5 +128,12 @@ In this project, Angular Material was used for dialogs, navigation, forms, butto
 - As a user, I want to view details about a movie.
 - As a user, I want to add and remove movies from my favorites.
 - As a user, I want to view and edit my profile information.
+
+---
+
+## 🤖 AI Usage Disclosure
+
+AI tools were used to assist with drafting and structuring documentation.
+All generated content was reviewed, edited, and verified for accuracy by the author.
 
 ---
